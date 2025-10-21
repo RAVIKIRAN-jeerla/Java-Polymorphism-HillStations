@@ -1,0 +1,75 @@
+// Superclass
+class HillStations {
+    void location() {
+        System.out.println("Location is:");
+    }
+
+    void famousFor() {
+        System.out.println("Famous for:");
+    }
+}
+
+class Manali extends HillStations {
+    @Override
+    void location() {
+        System.out.println("Manali is in Himachal Pradesh");
+    }
+
+    @Override
+    void famousFor() {
+        System.out.println("It is Famous for Hadimba Temple and adventure sports");
+    }
+}
+
+class Mussoorie extends HillStations {
+    @Override
+    void location() {
+        System.out.println("Mussoorie is in Uttarakhand");
+    }
+
+    @Override
+    void famousFor() {
+        System.out.println("It is Famous for education institutions");
+    }
+}
+
+class Gulmarg extends HillStations {
+    @Override
+    void location() {
+        System.out.println("Gulmarg is in J&K");
+    }
+
+    @Override
+    void famousFor() {
+        System.out.println("It is Famous for skiing");
+    }
+}
+
+public class HillStation {
+    public static void main(String[] args) {
+
+        // Reference of parent class with parent object
+        HillStations h = new HillStations();
+        h.location();
+        h.famousFor();
+
+        System.out.println();
+
+        // Reference of parent class but pointing to each subclass object
+        HillStations h1 = new Manali();
+        HillStations h2 = new Mussoorie();
+        HillStations h3 = new Gulmarg();
+
+        // Calling overridden methods (runtime polymorphism)
+        h1.location();
+        h1.famousFor();
+        System.out.println();
+
+        h2.location();
+        h2.famousFor();
+        System.out.println();
+
+        h3.location();
+        h3.famousFor();
+    }
+}
